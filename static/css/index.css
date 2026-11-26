@@ -367,6 +367,15 @@ main {
   flex-shrink: 0;
 }
 
+/* Code/Data/Checkpoint 三个还没公开,标成 <span aria-disabled> 而不是 <a href="#">——
+   href="#" 点了会跳回页面顶部,看着像个坏链接;纯 span 不可点,靠透明度+默认光标
+   提示"暂不可用",不会误导用户点进去却什么也没发生。 */
+.cta-button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 42px rgba(23, 32, 44, 0.14);
