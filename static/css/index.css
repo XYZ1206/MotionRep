@@ -368,14 +368,8 @@ main {
 }
 
 /* Code/Data/Checkpoint 三个还没公开,标成 <span aria-disabled> 而不是 <a href="#">——
-   href="#" 点了会跳回页面顶部,看着像个坏链接;纯 span 不可点,靠透明度+默认光标
-   提示"暂不可用",不会误导用户点进去却什么也没发生。 */
-.cta-button[aria-disabled="true"] {
-  opacity: 0.55;
-  cursor: default;
-  pointer-events: none;
-}
-
+   href="#" 点了会跳回页面顶部,看着像个坏链接。换成 span 本身就没有可跳转的目标,
+   不需要额外样式区分;视觉上和其余按钮完全一致,只是点击没有任何反应。 */
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 42px rgba(23, 32, 44, 0.14);
